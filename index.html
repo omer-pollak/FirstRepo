@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/myjs.js"></script>
+    <link href="css/Folder1.css" rel="stylesheet" />
+    <title>Drone Dev App</title>
+  </head>
+  <body>
+      <div id="daterino">
+        <script>
+          var toPrint = "";
+          var curDate =  new Date();
+          var y = curDate.getFullYear();
+          var m = curDate.getMonth() + 1;
+          var d = curDate.getDate();
+          toPrint +=`<p>
+                  ${d + "/" + m + "/" + y}
+                  </p>`;
+          // console.log("curDate");
+          document.getElementById("daterino").innerHTML = toPrint;
+        </script>
+    </div>
+    <div class="clientInfo">
+      <!-- confusion area -->
+      <form action="javascript:handleData()" id="myForm">
+        
+      <!-- area-->  
+        <h1>Drone Dev App</h1>
+        <hr />
+        <br />
+        Name:
+        <input type="text" id="clientName" placeholder="Enter name..." />
+        </br></br>
+        Phone Number:
+        <input type="number" id="clientPhone" placeholder="Enter phone number..."></input>
+        </br></br>
+        Address:
+        <input type="text" id="clientAddress" placeholder="Enter Address..." />
+        </br></br>
+        Client has VIP Membership?<input type="checkbox" id="vip"/>
+        </br></br>
+        Drone Company:
+        <select id="droneCompany">
+            <option id="dji">DJI</option>
+            <option id="yuneec">Yuneec</option>
+            <option id="ehang">EHang</option>
+        </select>
+        </br></br>
+        Drone Model:
+        <select id="droneModel">
+            <option id="mavic">Mavic</option>
+            <option id="typhoon">Typhoon</option>
+            <option id="ghost">Ghost</option>
+        </select>
+        </br></br>
+        
+        
+        Issue Description:
+        </br>
+        <textarea placeholder="Describe the issue..." id="issueDesc"></textarea>
+        </br></br>
+        Fixing Description:
+        </br>
+        <textarea placeholder="Describe the issue..." id="fixDesc"></textarea>
+        </br></br>
+        ETA fixing date:
+        <input type="date" id="etaFix"/>
+        
+      </br></br>
+        <input type="submit"/>
+        <input type="reset"/>
+      </form>
+    </div>   
+      <table>
+        <thead>
+            <th>Date Received</th>
+            <th>ETA Return Date</th>
+            <th>Days left to be returned</th>
+            <th>Client Name</th>
+            <th>Client Phone Number:</th>
+            <th>Issue Description</th>
+        </thead>
+        <tbody id="clientList">
+            
+        </tbody>
+      </table>
+  </body>
+</html>
